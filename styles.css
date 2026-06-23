@@ -832,3 +832,70 @@ p + p { margin-top: 12px; }
 .effort-final {
   width: min(100%, 660px) !important;
 }
+
+/* Fix page 5 spacing on mobile */
+@media (max-width: 600px) {
+  .page--lesson {
+    padding:
+      calc(38px + var(--safe-top))
+      calc(18px + var(--safe-right))
+      calc(92px + var(--safe-bottom))
+      calc(18px + var(--safe-left)) !important;
+    gap: 12px !important;
+  }
+
+  .page--lesson .lesson-photo {
+    width: min(100%, 620px) !important;
+    height: min(26dvh, 230px) !important;
+    margin: 28px auto 0 !important;
+    display: grid !important;
+    place-items: center !important;
+    flex: 0 0 auto !important;
+  }
+
+  .page--lesson .lesson-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    object-fit: contain !important;
+  }
+
+  .page--lesson .lesson-card {
+    width: min(100%, 620px) !important;
+    margin: 0 !important;
+    padding: 14px 16px 18px !important;
+  }
+
+  .page--lesson .lesson-card .page-code {
+    margin-bottom: 8px !important;
+  }
+
+  .page--lesson .lesson-card .kicker {
+    margin-bottom: 8px !important;
+    font-size: .48rem !important;
+  }
+
+  .page--lesson .lesson-card h2 {
+    margin-bottom: 10px !important;
+    font-size: clamp(1.75rem, 7.2vw, 2.45rem) !important;
+    line-height: .95 !important;
+  }
+
+  .page--lesson .lesson-card p {
+    font-size: clamp(.72rem, 3vw, .86rem) !important;
+    line-height: 1.38 !important;
+  }
+
+  .page--lesson .lesson-card p + p {
+    margin-top: 7px !important;
+  }
+
+  .page-nav {
+    bottom: calc(10px + var(--safe-bottom)) !important;
+  }
+
+  .nav-button {
+    width: 46px !important;
+    height: 46px !important;
+  }
+}
