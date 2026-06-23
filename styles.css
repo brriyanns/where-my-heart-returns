@@ -1137,3 +1137,343 @@ p + p { margin-top: 12px; }
   }
 }
 
+
+/* FINAL FULL-SCREEN MODE — ALL PAGES, NO SCROLL */
+@media (max-width: 900px) {
+  html,
+  body,
+  .deck {
+    width: 100% !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    overflow: hidden !important;
+    overscroll-behavior: none !important;
+  }
+
+  body {
+    touch-action: pan-x !important;
+  }
+
+  .page,
+  .page:not(.page--cover) {
+    width: 100% !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+
+    overflow: hidden !important;
+    overscroll-behavior: none !important;
+    touch-action: pan-x !important;
+
+    padding:
+      calc(42px + var(--safe-top))
+      calc(16px + var(--safe-right))
+      calc(82px + var(--safe-bottom))
+      calc(16px + var(--safe-left)) !important;
+  }
+
+  .page-code,
+  .frequency-head,
+  .last-signal {
+    top: calc(14px + var(--safe-top)) !important;
+    left: calc(16px + var(--safe-left)) !important;
+    right: calc(16px + var(--safe-right)) !important;
+    font-size: .46rem !important;
+  }
+
+  .opening-copy,
+  .dark-copy,
+  .paper-copy,
+  .lesson-card,
+  .final-copy,
+  .last-copy,
+  .effort-short,
+  .effort-final {
+    width: min(100%, 660px) !important;
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 15px 16px 17px !important;
+
+    overflow: visible !important;
+    flex: 0 0 auto !important;
+  }
+
+  .opening-copy h2,
+  .dark-copy h2,
+  .paper-copy h2,
+  .lesson-card h2,
+  .final-copy h2,
+  .last-copy h2,
+  .effort-short h2,
+  .effort-final h2 {
+    margin-bottom: 10px !important;
+    font-size: clamp(1.5rem, 4.2vh, 2.35rem) !important;
+    line-height: .96 !important;
+  }
+
+  .opening-copy p,
+  .dark-copy p,
+  .paper-copy p,
+  .lesson-card p,
+  .final-copy p,
+  .last-copy p,
+  .effort-short p,
+  .effort-final p {
+    font-size: clamp(.66rem, 1.52vh, .84rem) !important;
+    line-height: 1.36 !important;
+  }
+
+  .opening-copy p + p,
+  .dark-copy p + p,
+  .paper-copy p + p,
+  .lesson-card p + p,
+  .final-copy p + p,
+  .last-copy p + p,
+  .effort-short p + p,
+  .effort-final p + p {
+    margin-top: 7px !important;
+  }
+
+  .kicker {
+    margin-bottom: 7px !important;
+    font-size: .45rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .display-line,
+  .last-promise {
+    margin-top: 12px !important;
+    font-size: clamp(1.1rem, 3.2vh, 1.8rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  /* PAGE 1 — OPENING */
+  .page--opening {
+    display: grid !important;
+    align-items: end !important;
+  }
+
+  .page--opening .opening-copy {
+    position: relative !important;
+    inset: auto !important;
+    margin-bottom: 0 !important;
+  }
+
+  .opening-lead {
+    margin-bottom: 10px !important;
+    font-size: clamp(1.4rem, 3.8vh, 2.3rem) !important;
+    line-height: .98 !important;
+  }
+
+  /* PAGE 2 — COLLAGE */
+  .page--collage {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 11px !important;
+  }
+
+  .collage-frame {
+    width: min(88vw, 540px) !important;
+    height: 32dvh !important;
+    min-height: 0 !important;
+    margin: 18px auto 0 !important;
+    flex: 0 0 auto !important;
+  }
+
+  .collage-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  /* PAGE 3 — VOICE */
+  .page--voice {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 9px !important;
+  }
+
+  .waveform {
+    width: min(88vw, 600px) !important;
+    height: 17dvh !important;
+    margin: 18px auto 0 !important;
+    flex: 0 0 auto !important;
+  }
+
+  /* PAGE 4 — MESSAGES */
+  .page--messages {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+
+  .message-cloud {
+    width: min(92vw, 660px) !important;
+    height: 26dvh !important;
+    min-height: 0 !important;
+    margin: 20px auto 0 !important;
+    flex: 0 0 auto !important;
+  }
+
+  .bubble {
+    max-width: 43vw !important;
+    padding: 7px 10px !important;
+    font-size: clamp(.52rem, 1.3vh, .68rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  .b1 { top: 2% !important; }
+  .b2 { top: 4% !important; }
+  .b3 { top: 27% !important; }
+  .b4 { top: 40% !important; }
+  .b5 { top: 57% !important; }
+  .b6 { top: 70% !important; }
+
+  /* PAGE 5 — LESSON */
+  .page--lesson {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 15px !important;
+  }
+
+  .page--lesson .lesson-photo {
+    position: relative !important;
+    width: min(82vw, 500px) !important;
+    height: 27dvh !important;
+    min-height: 0 !important;
+
+    margin: 16px auto 0 !important;
+    padding: 0 !important;
+
+    display: grid !important;
+    place-items: center !important;
+    flex: 0 0 auto !important;
+
+    overflow: hidden !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  .page--lesson .lesson-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+  .page--lesson .lesson-card {
+    position: relative !important;
+    width: min(92vw, 660px) !important;
+    margin: 0 auto !important;
+    padding: 15px 16px 17px !important;
+
+    transform: none !important;
+    clip-path: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .page--lesson .lesson-card .page-code {
+    position: static !important;
+    inset: auto !important;
+    margin: 0 0 7px !important;
+  }
+
+  /* PAGE 6 — GOODNESS */
+  .page--goodness {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  .goodness-copy {
+    margin: 24px auto 0 !important;
+  }
+
+  /* PAGE 7 — EFFORT */
+  .page--effort-a {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 11px !important;
+  }
+
+  .equation {
+    width: min(92vw, 660px) !important;
+    height: 16dvh !important;
+    min-height: 0 !important;
+    margin: 18px auto 0 !important;
+    padding: 11px 13px !important;
+    flex: 0 0 auto !important;
+
+    font-size: clamp(1.25rem, 4vh, 2.2rem) !important;
+  }
+
+  /* PAGE 8 — EFFORT LIST */
+  .page--effort-b {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 11px !important;
+  }
+
+  .effort-lines {
+    width: min(92vw, 660px) !important;
+    margin: 18px auto 0 !important;
+    padding: 6px 13px !important;
+    flex: 0 0 auto !important;
+  }
+
+  .effort-lines span {
+    padding: 7px 0 !important;
+    font-size: clamp(.68rem, 1.55vh, .88rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  /* PAGE 9 — PERMANENT */
+  .page--permanent {
+    display: grid !important;
+    align-items: end !important;
+  }
+
+  .page--permanent .final-copy {
+    margin-bottom: 0 !important;
+  }
+
+  /* PAGE 10 — LAST */
+  .page--last {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  .last-copy {
+    margin: 24px auto 0 !important;
+  }
+
+  /* NAVIGATION */
+  .page-nav {
+    position: fixed !important;
+    z-index: 999 !important;
+    bottom: calc(10px + var(--safe-bottom)) !important;
+  }
+
+  .nav-button {
+    width: 46px !important;
+    height: 46px !important;
+  }
+
+  .page-count {
+    font-size: .52rem !important;
+  }
+}
+
