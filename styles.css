@@ -965,3 +965,35 @@ p + p { margin-top: 12px; }
     bottom: calc(12px + var(--safe-bottom)) !important;
   }
 }
+
+/* PAGE 5 SPACING POLISH */
+@media (max-width: 900px) {
+  .page--lesson {
+    gap: 0 !important;
+    padding-bottom: calc(170px + var(--safe-bottom)) !important;
+    scroll-padding-bottom: calc(170px + var(--safe-bottom)) !important;
+  }
+
+  .page--lesson .lesson-photo {
+    margin-bottom: 28px !important;
+  }
+
+  .page--lesson .lesson-photo img {
+    max-height: 38dvh !important;
+  }
+
+  .page--lesson .lesson-card {
+    margin-top: 0 !important;
+    margin-bottom: 48px !important;
+    padding: 22px 20px 28px !important;
+  }
+
+  .page--lesson .lesson-card h2 {
+    margin-bottom: 18px !important;
+  }
+
+  .page--lesson .lesson-card p + p {
+    margin-top: 13px !important;
+  }
+}
+
