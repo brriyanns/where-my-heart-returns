@@ -899,3 +899,69 @@ p + p { margin-top: 12px; }
     height: 46px !important;
   }
 }
+
+/* Universal mobile fix: prevent any page content from being cut off */
+@media (max-width: 900px) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden !important;
+  }
+
+  body {
+    touch-action: pan-y pinch-zoom !important;
+  }
+
+  .deck {
+    height: 100dvh !important;
+    overflow: hidden !important;
+  }
+
+  .page:not(.page--cover) {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y pinch-zoom !important;
+    scrollbar-width: none;
+    padding-bottom: calc(135px + var(--safe-bottom)) !important;
+  }
+
+  .page:not(.page--cover)::-webkit-scrollbar {
+    display: none;
+  }
+
+  .page--goodness,
+  .page--last {
+    justify-content: flex-start !important;
+  }
+
+  .goodness-copy,
+  .last-copy {
+    margin-top: calc(58px + var(--safe-top)) !important;
+  }
+
+  .collage-frame,
+  .lesson-photo,
+  .permanent-photo,
+  .message-cloud,
+  .waveform,
+  .equation,
+  .effort-lines,
+  .opening-copy,
+  .paper-copy,
+  .dark-copy,
+  .lesson-card,
+  .final-copy,
+  .last-copy {
+    flex: 0 0 auto !important;
+  }
+
+  .page-nav {
+    position: fixed !important;
+    z-index: 999 !important;
+    bottom: calc(12px + var(--safe-bottom)) !important;
+  }
+}
